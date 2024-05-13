@@ -1,0 +1,34 @@
+SQL> SELECT *
+  2  FROM Track
+  3  WHERE ALBUM_ID IN (SELECT ALBUM_ID FROM "Album" WHERE YEAR = 2020);
+
+  TRACK_ID TRACK_NAME        DURATION   ALBUM_ID                                
+---------- --------------- ---------- ----------                                
+         1 Sunset Shines          300          1                                
+
+
+SQL> UPDATE Playlist
+  2  SET PLAYLIST_NAME = 'Electric Shocks'
+  3  WHERE CREATOR_USERNAME = 'ekansh7';
+
+1 row updated.
+ 
+SQL> INSERT INTO "PlaylistTrack" (PLAYLIST_ID, TRACK_ID)
+  2  SELECT p.PLAYLIST_ID, t.TRACK_ID
+  3  FROM Playlist p
+  4  JOIN Track t ON p.CREATOR_USERNAME = 'aryan23'
+  5  LEFT JOIN "PlaylistTrack" pt ON p.PLAYLIST_ID = pt.PLAYLIST_ID AND t.TRACK_ID = pt.TRACK_ID
+  6  WHERE pt.PLAYLIST_ID IS NULL;
+
+8 rows created.
+
+SQL> DELETE FROM "PlaylistTrack"
+  2  WHERE PLAYLIST_ID IN (SELECT PLAYLIST_ID FROM Playlist WHERE TYPE = 'Relax');
+
+10 rows deleted.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

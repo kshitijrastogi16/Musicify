@@ -1,0 +1,43 @@
+SQL> CREATE OR REPLACE FUNCTION calculate_total_duration(p_playlist_id IN NUMBER)
+  2  RETURN NUMBER
+  3  IS
+  4      v_total_duration NUMBER := 0;
+  5  BEGIN
+  6      SELECT SUM(t.DURATION)
+  7      INTO v_total_duration
+  8      FROM "PlaylistTrack" pt
+  9      JOIN Track t ON pt.TRACK_ID = t.TRACK_ID
+ 10      WHERE pt.PLAYLIST_ID = p_playlist_id;
+ 11  
+ 12      RETURN v_total_duration;
+ 13  EXCEPTION
+ 14      WHEN NO_DATA_FOUND THEN
+ 15          RETURN 0;
+ 16  END;
+ 17  /
+
+Function created.
+
+SQL> SELECT PLAYLIST_ID, calculate_total_duration(PLAYLIST_ID) AS total_duration
+  2  FROM Playlist;
+
+PLAYLIST_ID TOTAL_DURATION                                                      
+----------- --------------                                                      
+        101            660                                                      
+        102            570                                                      
+        103            600                                                      
+        104            620                                                      
+        105            460                                                      
+        106            680                                                      
+        107                                                                     
+        108            600                                                      
+        109            480                                                      
+        110            580                                                      
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

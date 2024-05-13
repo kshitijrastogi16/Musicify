@@ -1,0 +1,774 @@
+SQL> SELECT *
+  2  FROM "User" u
+  3  INNER JOIN Playlist p ON u.USERNAME = p.CREATOR_USERNAME;
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansab10         Ansab      aalim.ansab@email.com                       101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansh6           Ansh       aggarwal.ansh@email.com                     104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+safal12         Safal      mehrotra.safal@email.com                    105      
+Road Trip       Personal   safal12                                              
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+aryan23         Aryan      chaudhary.aryan@email.com                   107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+gitansh14       Gitansh    naidu.gitansh@email.com                     110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+
+10 rows selected.
+
+SQL> SELECT *
+  2  FROM "Album" a
+  3  LEFT JOIN "Releases" r ON a.ALBUM_ID = r.ALBUM_ID;
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR  ARTIST_ID          
+---------- ---------- --------------- ---------- ---------- ----------          
+  ALBUM_ID                                                                      
+----------                                                                      
+         1       2020 Summer Vibes    Rock       Music               1          
+         1                                                                      
+                                                                                
+         2       2019 Greatest Hits   Rock       Music               2          
+         2                                                                      
+                                                                                
+         3       2021 Piano Beats     Classical  Music               3          
+         3                                                                      
+                                                                                
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR  ARTIST_ID          
+---------- ---------- --------------- ---------- ---------- ----------          
+  ALBUM_ID                                                                      
+----------                                                                      
+         4       2018 Hip Hop Jazz    Hip Hop    Music               4          
+         4                                                                      
+                                                                                
+         5       2023 Motivation      Talks      Podcast             5          
+         5                                                                      
+                                                                                
+         6       2022 Jazz Nights     Jazz       Music               6          
+         6                                                                      
+                                                                                
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR  ARTIST_ID          
+---------- ---------- --------------- ---------- ---------- ----------          
+  ALBUM_ID                                                                      
+----------                                                                      
+         7       2022 Paranormal      Talks      Podcast             7          
+         7                                                                      
+                                                                                
+         8       2016 Electronic Dope Electronic Music               8          
+         8                                                                      
+                                                                                
+         9       2015 R&B Soul        R&B        Music               9          
+         9                                                                      
+                                                                                
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR  ARTIST_ID          
+---------- ---------- --------------- ---------- ---------- ----------          
+  ALBUM_ID                                                                      
+----------                                                                      
+        10       2024 Indie Vibes     Indie      Music              10          
+        10                                                                      
+                                                                                
+
+10 rows selected.
+
+SQL> SELECT *
+  2  FROM "Artist" ar
+  3  RIGHT JOIN "Releases" r ON ar.ARTIST_ID = r.ARTIST_ID;
+
+ ARTIST_ID COUNTRY    ARTIST_NAME      ARTIST_ID   ALBUM_ID                     
+---------- ---------- --------------- ---------- ----------                     
+         1 UK         Alicia Keys              1          1                     
+         2 UK         Coldplay                 2          2                     
+         3 Germany    Tangerine Dream          3          3                     
+         4 Canada     Drake                    4          4                     
+         5 Australia  Keith Urban              5          5                     
+         6 Brazil     Antonio Carlos           6          6                     
+         7 Sweden     Avicii                   7          7                     
+         8 Ireland    Hozier                   8          8                     
+         9 France     Stromae                  9          9                     
+        10 India      KK Singh                10         10                     
+
+10 rows selected.
+
+SQL> SELECT *
+  2  FROM Playlist pl
+  3  FULL JOIN "PlaylistTrack" pt ON pl.PLAYLIST_ID = pt.PLAYLIST_ID;
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US PLAYLIST_ID   TRACK_ID        
+----------- --------------- ---------- ---------- ----------- ----------        
+        101 Chill Mix       Party      ansab10            101          1        
+        101 Chill Mix       Party      ansab10            101          3        
+        102 Workout Beats   Gym        harshit30          102          4        
+        102 Workout Beats   Gym        harshit30          102          5        
+        103 Party Jams      Party      kshitij4           103          6        
+        103 Party Jams      Party      kshitij4           103          7        
+        104 LoFi Beats      Study      ansh6              104          8        
+        104 LoFi Beats      Study      ansh6              104          9        
+        105 Road Trip       Personal   safal12            105          2        
+        105 Road Trip       Personal   safal12            105         10        
+        106 Throwback Hits  Personal   ishaan15           106          3        
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US PLAYLIST_ID   TRACK_ID        
+----------- --------------- ---------- ---------- ----------- ----------        
+        106 Throwback Hits  Personal   ishaan15           106          6        
+        107 Relaxing Piano  Relax      aryan23            107          7        
+        107 Relaxing Piano  Relax      aryan23            107          9        
+        108 Country Vibes   Personal   ekansh7            108          1        
+        108 Country Vibes   Personal   ekansh7            108          4        
+        109 Rock Anthems    Party      keshav13           109          2        
+        109 Rock Anthems    Party      keshav13           109          5        
+        110 Pop Sensations  Party      gitansh14          110          8        
+        110 Pop Sensations  Party      gitansh14          110         10        
+
+20 rows selected.
+
+SQL> SELECT u1.USERNAME, u2.USERNAME
+  2  FROM "User" u1
+  3  JOIN "User" u2 ON u1.USERNAME <> u2.USERNAME;
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+ansab10         ansh6                                                           
+ansab10         aryan23                                                         
+ansab10         ekansh7                                                         
+ansab10         gitansh14                                                       
+ansab10         harshit30                                                       
+ansab10         ishaan15                                                        
+ansab10         keshav13                                                        
+ansab10         kshitij4                                                        
+ansab10         safal12                                                         
+ansh6           ansab10                                                         
+ansh6           aryan23                                                         
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+ansh6           ekansh7                                                         
+ansh6           gitansh14                                                       
+ansh6           harshit30                                                       
+ansh6           ishaan15                                                        
+ansh6           keshav13                                                        
+ansh6           kshitij4                                                        
+ansh6           safal12                                                         
+aryan23         ansab10                                                         
+aryan23         ansh6                                                           
+aryan23         ekansh7                                                         
+aryan23         gitansh14                                                       
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+aryan23         harshit30                                                       
+aryan23         ishaan15                                                        
+aryan23         keshav13                                                        
+aryan23         kshitij4                                                        
+aryan23         safal12                                                         
+ekansh7         ansab10                                                         
+ekansh7         ansh6                                                           
+ekansh7         aryan23                                                         
+ekansh7         gitansh14                                                       
+ekansh7         harshit30                                                       
+ekansh7         ishaan15                                                        
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+ekansh7         keshav13                                                        
+ekansh7         kshitij4                                                        
+ekansh7         safal12                                                         
+gitansh14       ansab10                                                         
+gitansh14       ansh6                                                           
+gitansh14       aryan23                                                         
+gitansh14       ekansh7                                                         
+gitansh14       harshit30                                                       
+gitansh14       ishaan15                                                        
+gitansh14       keshav13                                                        
+gitansh14       kshitij4                                                        
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+gitansh14       safal12                                                         
+harshit30       ansab10                                                         
+harshit30       ansh6                                                           
+harshit30       aryan23                                                         
+harshit30       ekansh7                                                         
+harshit30       gitansh14                                                       
+harshit30       ishaan15                                                        
+harshit30       keshav13                                                        
+harshit30       kshitij4                                                        
+harshit30       safal12                                                         
+ishaan15        ansab10                                                         
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+ishaan15        ansh6                                                           
+ishaan15        aryan23                                                         
+ishaan15        ekansh7                                                         
+ishaan15        gitansh14                                                       
+ishaan15        harshit30                                                       
+ishaan15        keshav13                                                        
+ishaan15        kshitij4                                                        
+ishaan15        safal12                                                         
+keshav13        ansab10                                                         
+keshav13        ansh6                                                           
+keshav13        aryan23                                                         
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+keshav13        ekansh7                                                         
+keshav13        gitansh14                                                       
+keshav13        harshit30                                                       
+keshav13        ishaan15                                                        
+keshav13        kshitij4                                                        
+keshav13        safal12                                                         
+kshitij4        ansab10                                                         
+kshitij4        ansh6                                                           
+kshitij4        aryan23                                                         
+kshitij4        ekansh7                                                         
+kshitij4        gitansh14                                                       
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+kshitij4        harshit30                                                       
+kshitij4        ishaan15                                                        
+kshitij4        keshav13                                                        
+kshitij4        safal12                                                         
+safal12         ansab10                                                         
+safal12         ansh6                                                           
+safal12         aryan23                                                         
+safal12         ekansh7                                                         
+safal12         gitansh14                                                       
+safal12         harshit30                                                       
+safal12         ishaan15                                                        
+
+USERNAME        USERNAME                                                        
+--------------- ---------------                                                 
+safal12         keshav13                                                        
+safal12         kshitij4                                                        
+
+90 rows selected.
+
+SQL> SELECT *
+  2  FROM "User", "Playlist";
+FROM "User", "Playlist"
+             *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> SELECT *
+  2  FROM "User", Playlist;
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansab10         Ansab      aalim.ansab@email.com                       101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+ansh6           Ansh       aggarwal.ansh@email.com                     101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+safal12         Safal      mehrotra.safal@email.com                    101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+aryan23         Aryan      chaudhary.aryan@email.com                   101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+gitansh14       Gitansh    naidu.gitansh@email.com                     101      
+Chill Mix       Party      ansab10                                              
+                                                                                
+ansab10         Ansab      aalim.ansab@email.com                       102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansh6           Ansh       aggarwal.ansh@email.com                     102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+safal12         Safal      mehrotra.safal@email.com                    102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+harshit30       Harshit    kumar.harshit@email.com                     102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+aryan23         Aryan      chaudhary.aryan@email.com                   102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+keshav13        Keshav     keshav.kishan@email.com                     102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+gitansh14       Gitansh    naidu.gitansh@email.com                     102      
+Workout Beats   Gym        harshit30                                            
+                                                                                
+ansab10         Ansab      aalim.ansab@email.com                       103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+kshitij4        Kshitij    rastogi.kshitij@email.com                   103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+ansh6           Ansh       aggarwal.ansh@email.com                     103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+safal12         Safal      mehrotra.safal@email.com                    103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ishaan15        Ishaan     manhaas.ishaan@email.com                    103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+aryan23         Aryan      chaudhary.aryan@email.com                   103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+gitansh14       Gitansh    naidu.gitansh@email.com                     103      
+Party Jams      Party      kshitij4                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansab10         Ansab      aalim.ansab@email.com                       104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+ansh6           Ansh       aggarwal.ansh@email.com                     104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+safal12         Safal      mehrotra.safal@email.com                    104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+aryan23         Aryan      chaudhary.aryan@email.com                   104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+gitansh14       Gitansh    naidu.gitansh@email.com                     104      
+LoFi Beats      Study      ansh6                                                
+                                                                                
+ansab10         Ansab      aalim.ansab@email.com                       105      
+Road Trip       Personal   safal12                                              
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   105      
+Road Trip       Personal   safal12                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansh6           Ansh       aggarwal.ansh@email.com                     105      
+Road Trip       Personal   safal12                                              
+                                                                                
+safal12         Safal      mehrotra.safal@email.com                    105      
+Road Trip       Personal   safal12                                              
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    105      
+Road Trip       Personal   safal12                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+harshit30       Harshit    kumar.harshit@email.com                     105      
+Road Trip       Personal   safal12                                              
+                                                                                
+aryan23         Aryan      chaudhary.aryan@email.com                   105      
+Road Trip       Personal   safal12                                              
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 105      
+Road Trip       Personal   safal12                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+keshav13        Keshav     keshav.kishan@email.com                     105      
+Road Trip       Personal   safal12                                              
+                                                                                
+gitansh14       Gitansh    naidu.gitansh@email.com                     105      
+Road Trip       Personal   safal12                                              
+                                                                                
+ansab10         Ansab      aalim.ansab@email.com                       106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+kshitij4        Kshitij    rastogi.kshitij@email.com                   106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+ansh6           Ansh       aggarwal.ansh@email.com                     106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+safal12         Safal      mehrotra.safal@email.com                    106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ishaan15        Ishaan     manhaas.ishaan@email.com                    106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+aryan23         Aryan      chaudhary.aryan@email.com                   106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+gitansh14       Gitansh    naidu.gitansh@email.com                     106      
+Throwback Hits  Personal   ishaan15                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansab10         Ansab      aalim.ansab@email.com                       107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+ansh6           Ansh       aggarwal.ansh@email.com                     107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+safal12         Safal      mehrotra.safal@email.com                    107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+aryan23         Aryan      chaudhary.aryan@email.com                   107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+gitansh14       Gitansh    naidu.gitansh@email.com                     107      
+Relaxing Piano  Relax      aryan23                                              
+                                                                                
+ansab10         Ansab      aalim.ansab@email.com                       108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansh6           Ansh       aggarwal.ansh@email.com                     108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+safal12         Safal      mehrotra.safal@email.com                    108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+harshit30       Harshit    kumar.harshit@email.com                     108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+aryan23         Aryan      chaudhary.aryan@email.com                   108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+keshav13        Keshav     keshav.kishan@email.com                     108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+gitansh14       Gitansh    naidu.gitansh@email.com                     108      
+Country Vibes   Personal   ekansh7                                              
+                                                                                
+ansab10         Ansab      aalim.ansab@email.com                       109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+kshitij4        Kshitij    rastogi.kshitij@email.com                   109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+ansh6           Ansh       aggarwal.ansh@email.com                     109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+safal12         Safal      mehrotra.safal@email.com                    109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ishaan15        Ishaan     manhaas.ishaan@email.com                    109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+aryan23         Aryan      chaudhary.aryan@email.com                   109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+gitansh14       Gitansh    naidu.gitansh@email.com                     109      
+Rock Anthems    Party      keshav13                                             
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+ansab10         Ansab      aalim.ansab@email.com                       110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                   110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+ansh6           Ansh       aggarwal.ansh@email.com                     110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+safal12         Safal      mehrotra.safal@email.com                    110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+ishaan15        Ishaan     manhaas.ishaan@email.com                    110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+harshit30       Harshit    kumar.harshit@email.com                     110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+aryan23         Aryan      chaudhary.aryan@email.com                   110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                 110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+keshav13        Keshav     keshav.kishan@email.com                     110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+
+USERNAME        FIRST_NAME EMAIL                               PLAYLIST_ID      
+--------------- ---------- ----------------------------------- -----------      
+PLAYLIST_NAME   TYPE       CREATOR_US                                           
+--------------- ---------- ----------                                           
+gitansh14       Gitansh    naidu.gitansh@email.com                     110      
+Pop Sensations  Party      gitansh14                                            
+                                                                                
+
+100 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

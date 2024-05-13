@@ -1,0 +1,98 @@
+SQL> SELECT * FROM "User" WHERE username = 'kshitij4';
+
+USERNAME        FIRST_NAME EMAIL                                                
+--------------- ---------- -----------------------------------                  
+kshitij4        Kshitij    rastogi.kshitij@email.com                            
+
+SQL> SELECT * FROM "User" WHERE email LIKE '%@email.com';
+
+USERNAME        FIRST_NAME EMAIL                                                
+--------------- ---------- -----------------------------------                  
+ansab10         Ansab      aalim.ansab@email.com                                
+kshitij4        Kshitij    rastogi.kshitij@email.com                            
+ansh6           Ansh       aggarwal.ansh@email.com                              
+safal12         Safal      mehrotra.safal@email.com                             
+ishaan15        Ishaan     manhaas.ishaan@email.com                             
+harshit30       Harshit    kumar.harshit@email.com                              
+aryan23         Aryan      chaudhary.aryan@email.com                            
+ekansh7         Ekansh     sankhyadar.ekansh@email.com                          
+keshav13        Keshav     kishan.keshav@email.com                              
+gitansh14       Gitansh    naidu.gitansh@email.com                              
+
+10 rows selected.                         
+
+SQL> SELECT * FROM "Album" WHERE year > 2020;
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR                     
+---------- ---------- --------------- ---------- ----------                     
+         3       2021 Piano Beats     Classical  Music                          
+         5       2023 Motivation      Talks      Podcast                        
+         6       2022 Jazz Nights     Jazz       Music                          
+         7       2022 Paranormal      Talks      Podcast                        
+        10       2024 Indie Vibes     Indie      Music                          
+
+SQL> SELECT * FROM "Artist" WHERE country = 'USA';
+
+ ARTIST_ID COUNTRY    ARTIST_NAME                                               
+---------- ---------- ---------------                                           
+         1 USA        Alicia Keys                                               
+
+SQL> SELECT * FROM "Releases" WHERE artist_id = 1;
+
+ ARTIST_ID   ALBUM_ID                                                           
+---------- ----------                                                           
+         1          1                                                           
+
+SQL> SELECT * FROM Playlist WHERE creator_username = 'ansab10';
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US                               
+----------- --------------- ---------- ----------                               
+        101 Chill Mix       Party      ansab10                                  
+
+SQL> SELECT * FROM Track WHERE album_id = 1;
+
+  TRACK_ID TRACK_NAME        DURATION   ALBUM_ID                                
+---------- --------------- ---------- ----------                                
+         1 Sunset Shines          240          1                                
+
+
+SQL> SELECT * FROM "PlaylistTrack" WHERE playlist_id = 101;
+
+PLAYLIST_ID   TRACK_ID                                                          
+----------- ----------                                                          
+        101          1                                                          
+        101          3                                                          
+
+
+SQL> SELECT * FROM "PlaylistTrack" WHERE track_id = 2;
+
+PLAYLIST_ID   TRACK_ID                                                          
+----------- ----------                                                          
+        105          2                                                          
+        109          2                                                          
+
+SQL> UPDATE "User" SET email = 'keshav.kishan@email.com' WHERE username = 'keshav13';
+
+1 row updated.
+
+SQL> UPDATE "Album" SET genre = 'Rock' WHERE album_id = 1;
+
+1 row updated.
+
+SQL> UPDATE "Artist" SET country = 'UK' WHERE artist_id = 1;
+
+1 row updated.
+
+SQL> UPDATE Playlist SET playlist_name = 'LoFi Beats' WHERE playlist_id = 104;
+
+1 row updated.
+
+SQL> UPDATE Track SET duration = 300 WHERE track_id = 1;
+
+1 row updated.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

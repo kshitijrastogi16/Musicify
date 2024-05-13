@@ -1,0 +1,122 @@
+SQL> INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email');
+Enter value for username: ansab10
+Enter value for first_name: Ansab
+Enter value for last_name: Aalim
+Enter value for email: aalim.ansab@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('ansab10', 'Ansab', 'Aalim', 'aalim.ansab@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: kshitij4
+Enter value for first_name: Kshitij
+Enter value for last_name: Rastogi
+Enter value for email: rastogi.kshitij@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('kshitij4', 'Kshitij', 'Rastogi', 'rastogi.kshitij@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: ansh6
+Enter value for first_name: Ansh
+Enter value for last_name: Aggarwal
+Enter value for email: aggarwal.ansh@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('ansh6', 'Ansh', 'Aggarwal', 'aggarwal.ansh@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: safal12
+Enter value for first_name: Safal
+Enter value for last_name: Mehrotra
+Enter value for email: mehrotra.safal@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('safal12', 'Safal', 'Mehrotra', 'mehrotra.safal@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: ishaan15
+Enter value for first_name: Ishaan
+Enter value for last_name: Manhaas
+Enter value for email: manhaas.ishaan@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('ishaan15', 'Ishaan', 'Manhaas', 'manhaas.ishaan@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: harshit30
+Enter value for first_name: Harshit
+Enter value for last_name: Kumar
+Enter value for email: kumar.harshit@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('harshit30', 'Harshit', 'Kumar', 'kumar.harshit@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: aryan23
+Enter value for first_name: Aryan
+Enter value for last_name: Chaudhary
+Enter value for email: chaudhary.aryan@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('aryan23', 'Aryan', 'Chaudhary', 'chaudhary.aryan@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: ekansh7
+Enter value for first_name: Ekansh
+Enter value for last_name: Sankhyadar
+Enter value for email: sankhyadar.ekansh@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('ekansh7', 'Ekansh', 'Sankhyadar', 'sankhyadar.ekansh@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: keshav13
+Enter value for first_name: Keshav
+Enter value for last_name: Kishan
+Enter value for email: kishan.keshav@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('keshav13', 'Keshav', 'Kishan', 'kishan.keshav@email.com')
+
+1 row created.
+
+SQL> /
+Enter value for username: gitansh14
+Enter value for first_name: Gitansh
+Enter value for last_name: Naidu
+Enter value for email: naidu.gitansh@email.com
+old   1: INSERT INTO "User" VALUES('&username', '&first_name', '&last_name', '&email')
+new   1: INSERT INTO "User" VALUES('gitansh14', 'Gitansh', 'Naidu', 'naidu.gitansh@email.com')
+
+1 row created.
+
+SQL> SELECT * FROM "User";
+
+USERNAME        FIRST_NAME LAST_NAME  EMAIL                                     
+--------------- ---------- ---------- ------------------------------            
+ansab10         Ansab      Aalim      aalim.ansab@email.com                     
+kshitij4        Kshitij    Rastogi    rastogi.kshitij@email.com                 
+ansh6           Ansh       Aggarwal   aggarwal.ansh@email.com                   
+safal12         Safal      Mehrotra   mehrotra.safal@email.com                  
+ishaan15        Ishaan     Manhaas    manhaas.ishaan@email.com                  
+harshit30       Harshit    Kumar      kumar.harshit@email.com                   
+aryan23         Aryan      Chaudhary  chaudhary.aryan@email.com                 
+ekansh7         Ekansh     Sankhyadar sankhyadar.ekansh@email.com               
+keshav13        Keshav     Kishan     kishan.keshav@email.com                   
+gitansh14       Gitansh    Naidu      naidu.gitansh@email.com                   
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

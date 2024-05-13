@@ -1,0 +1,195 @@
+SQL> INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id);
+Enter value for playlist_id: 101
+Enter value for track_id: 1
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(101, 1)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 101
+Enter value for track_id: 3
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(101, 3)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 102
+Enter value for track_id: 4
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(102, 4)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 102
+Enter value for track_id: 5
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(102, 5)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 103
+Enter value for track_id: 6
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(103, 6)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 103
+Enter value for track_id: 7
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(103, 7)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 104
+Enter value for track_id: 8
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(104, 8)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 104
+Enter value for track_id: 9
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(104, 9)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 105
+Enter value for track_id: 10
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(105, 10)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 105
+Enter value for track_id: 2
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(105, 2)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 106
+Enter value for track_id: 3
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(106, 3)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 106
+Enter value for track_id: 6
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(106, 6)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 107
+Enter value for track_id: 7
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(107, 7)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 107
+Enter value for track_id: 9
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(107, 9)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 108
+Enter value for track_id: 1
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(108, 1)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 108
+Enter value for track_id: 4
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(108, 4)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 109
+Enter value for track_id: 2
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(109, 2)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 109
+Enter value for track_id: 5
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(109, 5)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 110
+Enter value for track_id: 8
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(110, 8)
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 110
+Enter value for track_id: 10
+old   1: INSERT INTO "PlaylistTrack" VALUES(&playlist_id, &track_id)
+new   1: INSERT INTO "PlaylistTrack" VALUES(110, 10)
+
+1 row created.
+
+SQL> SELECT * FROM "PlaylistTrack";
+
+PLAYLIST_ID   TRACK_ID                                                          
+----------- ----------                                                          
+        101          1                                                          
+        101          3                                                          
+        102          4                                                          
+        102          5                                                          
+        103          6                                                          
+        103          7                                                          
+        104          8                                                          
+        104          9                                                          
+        105          2                                                          
+        105         10                                                          
+        106          3                                                          
+
+PLAYLIST_ID   TRACK_ID                                                          
+----------- ----------                                                          
+        106          6                                                          
+        107          7                                                          
+        107          9                                                          
+        108          1                                                          
+        108          4                                                          
+        109          2                                                          
+        109          5                                                          
+        110          8                                                          
+        110         10                                                          
+
+20 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

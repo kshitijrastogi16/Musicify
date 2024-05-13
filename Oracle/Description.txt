@@ -1,0 +1,57 @@
+SQL> DESC "User";
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ USERNAME                                  NOT NULL VARCHAR2(15)
+ FIRST_NAME                                         VARCHAR2(10)
+ LAST_NAME                                          VARCHAR2(10)
+ EMAIL                                              VARCHAR2(30)
+
+SQL> DESC Playlist;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PLAYLIST_ID                               NOT NULL NUMBER(38)
+ PLAYLIST_NAME                                      VARCHAR2(15)
+ TYPE                                               VARCHAR2(10)
+ CREATOR_USERNAME                                   VARCHAR2(10)
+
+SQL> DESC "Album";
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ALBUM_ID                                  NOT NULL NUMBER(38)
+ YEAR                                               NUMBER(38)
+ TITLE                                              VARCHAR2(15)
+ GENRE                                              VARCHAR2(10)
+ PODCAST_OR_MUSIC                                   VARCHAR2(10)
+
+SQL> DESC Track;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TRACK_ID                                  NOT NULL NUMBER(38)
+ TRACK_NAME                                         VARCHAR2(15)
+ DURATION                                           NUMBER(38)
+ ALBUM_ID                                           NUMBER(38)
+
+SQL> DESC "Artist";
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ARTIST_ID                                 NOT NULL NUMBER(38)
+ COUNTRY                                            VARCHAR2(10)
+ ARTIST_NAME                                        VARCHAR2(15)
+
+SQL> DESC "Releases";
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ARTIST_ID                                 NOT NULL NUMBER(38)
+ ALBUM_ID                                  NOT NULL NUMBER(38)
+
+SQL> DESC "PlaylistTrack";
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PLAYLIST_ID                               NOT NULL NUMBER(38)
+ TRACK_ID                                  NOT NULL NUMBER(38)
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

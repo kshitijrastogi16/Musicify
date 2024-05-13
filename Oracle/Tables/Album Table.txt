@@ -1,0 +1,132 @@
+SQL> INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music');
+Enter value for album_id: 1
+Enter value for year: 2020
+Enter value for title: Summer Vibes
+Enter value for genre: Pop
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(1, 2020, 'Summer Vibes', 'Pop', 'Music')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 2
+Enter value for year: 2019
+Enter value for title: Greatest Hits
+Enter value for genre: Rock
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(2, 2019, 'Greatest Hits', 'Rock', 'Music')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 3
+Enter value for year: 2021
+Enter value for title: Piano Beats
+Enter value for genre: Classical
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(3, 2021, 'Piano Beats', 'Classical', 'Music')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 4
+Enter value for year: 2018
+Enter value for title: Hip Hop Jazz
+Enter value for genre: Hip Hop
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(4, 2018, 'Hip Hop Jazz', 'Hip Hop', 'Music')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 5
+Enter value for year: 2023
+Enter value for title: Motivation
+Enter value for genre: Talks
+Enter value for podcast_or_music: Podcast
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(5, 2023, 'Motivation', 'Talks', 'Podcast')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 6
+Enter value for year: 2022
+Enter value for title: Jazz Nights
+Enter value for genre: Jazz
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(6, 2022, 'Jazz Nights', 'Jazz', 'Music')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 7
+Enter value for year: 2022
+Enter value for title: Paranormal
+Enter value for genre: Talks
+Enter value for podcast_or_music: Podcast
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(7, 2022, 'Paranormal', 'Talks', 'Podcast')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 8
+Enter value for year: 2016
+Enter value for title: Electronic Dope
+Enter value for genre: Electronic
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(8, 2016, 'Electronic Dope', 'Electronic', 'Music')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 9
+Enter value for year: 2015
+Enter value for title: R&B Soul
+Enter value for genre: R&B
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(9, 2015, 'R&B Soul', 'R&B', 'Music')
+
+1 row created.
+
+SQL> /
+Enter value for album_id: 10
+Enter value for year: 2024
+Enter value for title: Indie Vibes
+Enter value for genre: Indie
+Enter value for podcast_or_music: Music
+old   1: INSERT INTO "Album" VALUES(&album_id, &year, '&title', '&genre', '&podcast_or_music')
+new   1: INSERT INTO "Album" VALUES(10, 2024, 'Indie Vibes', 'Indie', 'Music')
+
+1 row created.
+
+SQL> SELECT * FROM "Album";
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR
+---------- ---------- --------------- ---------- ----------
+         1       2020 Summer Vibes    Pop        Music
+         2       2019 Greatest Hits   Rock       Music
+         3       2021 Piano Beats     Classical  Music
+         4       2018 Hip Hop Jazz    Hip Hop    Music
+         5       2023 Motivation      Talks      Podcast
+         6       2022 Jazz Nights     Jazz       Music
+         7       2022 Paranormal      Talks      Podcast
+         8       2016 Electronic Dope Electronic Music
+         9       2015 R&B Soul        R&B        Music
+        10       2024 Indie Vibes     Indie      Music
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

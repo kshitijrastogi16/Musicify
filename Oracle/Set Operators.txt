@@ -1,0 +1,107 @@
+SQL> SELECT TRACK_NAME AS ITEM_NAME, 'Track' AS ITEM_TYPE FROM Track
+  2  UNION
+  3  SELECT TITLE AS ITEM_NAME, 'Album' AS ITEM_TYPE FROM "Album";
+
+ITEM_NAME       ITEM_                                                           
+--------------- -----                                                           
+Sunset Shines   Track                                                           
+Highway Nowhere Track                                                           
+Moonlight Rays  Track                                                           
+Rap God         Track                                                           
+Monday Travel   Track                                                           
+Smooth Jazz     Track                                                           
+Bhangarh Talks  Track                                                           
+Folklore        Track                                                           
+Soulful Seren   Track                                                           
+Indie Anthem    Track                                                           
+Summer Vibes    Album                                                           
+
+ITEM_NAME       ITEM_                                                           
+--------------- -----                                                           
+Greatest Hits   Album                                                           
+Piano Beats     Album                                                           
+Hip Hop Jazz    Album                                                           
+Motivation      Album                                                           
+Jazz Nights     Album                                                           
+Paranormal      Album                                                           
+Electronic Dope Album                                                           
+R&B Soul        Album                                                           
+Indie Vibes     Album                                                           
+
+20 rows selected.
+
+SQL> SELECT PLAYLIST_NAME AS ITEM_NAME, 'Playlist' AS ITEM_TYPE FROM Playlist
+  2  UNION ALL
+  3  SELECT TRACK_NAME AS ITEM_NAME, 'Track' AS ITEM_TYPE FROM Track;
+
+ITEM_NAME       ITEM_TYP                                                        
+--------------- --------                                                        
+Chill Mix       Playlist                                                        
+Workout Beats   Playlist                                                        
+Party Jams      Playlist                                                        
+LoFi Beats      Playlist                                                        
+Road Trip       Playlist                                                        
+Throwback Hits  Playlist                                                        
+Relaxing Piano  Playlist                                                        
+Country Vibes   Playlist                                                        
+Rock Anthems    Playlist                                                        
+Pop Sensations  Playlist                                                        
+Sunset Shines   Track                                                           
+
+ITEM_NAME       ITEM_TYP                                                        
+--------------- --------                                                        
+Highway Nowhere Track                                                           
+Moonlight Rays  Track                                                           
+Rap God         Track                                                           
+Monday Travel   Track                                                           
+Smooth Jazz     Track                                                           
+Bhangarh Talks  Track                                                           
+Folklore        Track                                                           
+Soulful Seren   Track                                                           
+Indie Anthem    Track                                                           
+
+20 rows selected.
+
+SQL> SELECT USERNAME FROM "User"
+  2  INTERSECT
+  3  SELECT CREATOR_USERNAME FROM Playlist;
+
+USERNAME                                                                        
+---------------                                                                 
+ansab10                                                                         
+ansh6                                                                           
+aryan23                                                                         
+ekansh7                                                                         
+gitansh14                                                                       
+harshit30                                                                       
+ishaan15                                                                        
+keshav13                                                                        
+kshitij4                                                                        
+safal12                                                                         
+
+10 rows selected. 
+
+SQL> SELECT PLAYLIST_NAME AS ITEM_NAME, 'Playlist' AS ITEM_TYPE FROM Playlist
+  2  MINUS
+  3  SELECT TRACK_NAME AS ITEM_NAME, 'Track' AS ITEM_TYPE FROM Track;
+
+ITEM_NAME       ITEM_TYP                                                        
+--------------- --------                                                        
+Chill Mix       Playlist                                                        
+Workout Beats   Playlist                                                        
+Party Jams      Playlist                                                        
+LoFi Beats      Playlist                                                        
+Road Trip       Playlist                                                        
+Throwback Hits  Playlist                                                        
+Relaxing Piano  Playlist                                                        
+Country Vibes   Playlist                                                        
+Rock Anthems    Playlist                                                        
+Pop Sensations  Playlist                                                        
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

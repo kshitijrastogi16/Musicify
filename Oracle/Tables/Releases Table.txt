@@ -1,0 +1,102 @@
+SQL> INSERT INTO "Releases" VALUES(&artist_id, &album_id);
+Enter value for artist_id: 1
+Enter value for album_id: 1
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(1, 1)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 2
+Enter value for album_id: 2
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(2, 2)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 3
+Enter value for album_id: 3
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(3, 3)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 4
+Enter value for album_id: 4
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(4, 4)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 5
+Enter value for album_id: 5
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(5, 5)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 6
+Enter value for album_id: 6
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(6, 6)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 7
+Enter value for album_id: 7
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(7, 7)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 8
+Enter value for album_id: 8
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(8, 8)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 9
+Enter value for album_id: 9
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(9, 9)
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 10
+Enter value for album_id: 10
+old   1: INSERT INTO "Releases" VALUES(&artist_id, &album_id)
+new   1: INSERT INTO "Releases" VALUES(10, 10)
+
+1 row created.
+
+SQL> SELECT * FROM "Releases";
+
+ ARTIST_ID   ALBUM_ID                                                           
+---------- ----------                                                           
+         1          1                                                           
+         2          2                                                           
+         3          3                                                           
+         4          4                                                           
+         5          5                                                           
+         6          6                                                           
+         7          7                                                           
+         8          8                                                           
+         9          9                                                           
+        10         10                                                           
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

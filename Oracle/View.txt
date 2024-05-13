@@ -1,0 +1,111 @@
+SQL> CREATE VIEW PlaylistsTracksView AS
+  2  SELECT p.PLAYLIST_ID,
+  3         p.PLAYLIST_NAME,
+  4         p.TYPE,
+  5         p.CREATOR_USERNAME,
+  6         t.TRACK_ID,
+  7         t.TRACK_NAME,
+  8         t.DURATION,
+  9         a.TITLE AS ALBUM_TITLE,
+ 10         a.GENRE AS ALBUM_GENRE
+ 11  FROM Playlist p
+ 12  JOIN "PlaylistTrack" pt ON p.PLAYLIST_ID = pt.PLAYLIST_ID
+ 13  JOIN Track t ON pt.TRACK_ID = t.TRACK_ID
+ 14  JOIN "Album" a ON t.ALBUM_ID = a.ALBUM_ID;
+
+View created.
+
+SQL> SELECT *
+  2  FROM PlaylistsTracksView;
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US   TRACK_ID TRACK_NAME         
+----------- --------------- ---------- ---------- ---------- ---------------    
+  DURATION ALBUM_TITLE     ALBUM_GENR                                           
+---------- --------------- ----------                                           
+        101 Chill Mix       Party      ansab10             1 Sunset Shines      
+       300 Summer Vibes    Rock                                                 
+                                                                                
+        101 Chill Mix       Party      ansab10             3 Moonlight Rays     
+       360 Piano Beats     Classical                                            
+                                                                                
+        102 Workout Beats   Gym        harshit30           4 Rap God            
+       300 Hip Hop Jazz    Hip Hop                                              
+                                                                                
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US   TRACK_ID TRACK_NAME         
+----------- --------------- ---------- ---------- ---------- ---------------    
+  DURATION ALBUM_TITLE     ALBUM_GENR                                           
+---------- --------------- ----------                                           
+        102 Workout Beats   Gym        harshit30           5 Monday Travel      
+       270 Motivation      Talks                                                
+                                                                                
+        103 Party Jams      Party      kshitij4            6 Smooth Jazz        
+       320 Jazz Nights     Jazz                                                 
+                                                                                
+        103 Party Jams      Party      kshitij4            7 Bhangarh Talks     
+       280 Paranormal      Talks                                                
+                                                                                
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US   TRACK_ID TRACK_NAME         
+----------- --------------- ---------- ---------- ---------- ---------------    
+  DURATION ALBUM_TITLE     ALBUM_GENR                                           
+---------- --------------- ----------                                           
+        104 LoFi Beats      Study      ansh6               8 Folklore           
+       330 Electronic Dope Electronic                                           
+                                                                                
+        104 LoFi Beats      Study      ansh6               9 Soulful Seren      
+       290 R&B Soul        R&B                                                  
+                                                                                
+        105 Road Trip       Personal   safal12             2 Highway Nowhere    
+       210 Greatest Hits   Rock                                                 
+                                                                                
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US   TRACK_ID TRACK_NAME         
+----------- --------------- ---------- ---------- ---------- ---------------    
+  DURATION ALBUM_TITLE     ALBUM_GENR                                           
+---------- --------------- ----------                                           
+        105 Road Trip       Personal   safal12            10 Indie Anthem       
+       250 Indie Vibes     Indie                                                
+                                                                                
+        106 Throwback Hits  Personal   ishaan15            3 Moonlight Rays     
+       360 Piano Beats     Classical                                            
+                                                                                
+        106 Throwback Hits  Personal   ishaan15            6 Smooth Jazz        
+       320 Jazz Nights     Jazz                                                 
+                                                                                
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US   TRACK_ID TRACK_NAME         
+----------- --------------- ---------- ---------- ---------- ---------------    
+  DURATION ALBUM_TITLE     ALBUM_GENR                                           
+---------- --------------- ----------                                           
+        108 Electric Shocks Personal   ekansh7             1 Sunset Shines      
+       300 Summer Vibes    Rock                                                 
+                                                                                
+        108 Electric Shocks Personal   ekansh7             4 Rap God            
+       300 Hip Hop Jazz    Hip Hop                                              
+                                                                                
+        109 Rock Anthems    Party      keshav13            2 Highway Nowhere    
+       210 Greatest Hits   Rock                                                 
+                                                                                
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US   TRACK_ID TRACK_NAME         
+----------- --------------- ---------- ---------- ---------- ---------------    
+  DURATION ALBUM_TITLE     ALBUM_GENR                                           
+---------- --------------- ----------                                           
+        109 Rock Anthems    Party      keshav13            5 Monday Travel      
+       270 Motivation      Talks                                                
+                                                                                
+        110 Pop Sensations  Party      gitansh14           8 Folklore           
+       330 Electronic Dope Electronic                                           
+                                                                                
+        110 Pop Sensations  Party      gitansh14          10 Indie Anthem       
+       250 Indie Vibes     Indie                                                
+                                                                                
+
+18 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

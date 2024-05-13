@@ -1,0 +1,122 @@
+SQL> INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id);
+Enter value for track_id: 1
+Enter value for track_name: Sunset Shines
+Enter value for duration: 240
+Enter value for album_id: 1
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(1, 'Sunset Shines', 240, 1)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 2
+Enter value for track_name: Highway Nowhere
+Enter value for duration: 210
+Enter value for album_id: 2
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(2, 'Highway Nowhere', 210, 2)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 3
+Enter value for track_name: Moonlight Rays
+Enter value for duration: 360
+Enter value for album_id: 3
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(3, 'Moonlight Rays', 360, 3)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 4
+Enter value for track_name: Rap God
+Enter value for duration: 300
+Enter value for album_id: 4
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(4, 'Rap God', 300, 4)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 5
+Enter value for track_name: Monday Travel
+Enter value for duration: 270
+Enter value for album_id: 5
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(5, 'Monday Travel', 270, 5)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 6
+Enter value for track_name: Smooth Jazz
+Enter value for duration: 320
+Enter value for album_id: 6
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(6, 'Smooth Jazz', 320, 6)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 7
+Enter value for track_name: Bhangarh Talks
+Enter value for duration: 280
+Enter value for album_id: 7
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(7, 'Bhangarh Talks', 280, 7)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 8
+Enter value for track_name: Folklore
+Enter value for duration: 330
+Enter value for album_id: 8
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(8, 'Folklore', 330, 8)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 9
+Enter value for track_name: Soulful Seren
+Enter value for duration: 290
+Enter value for album_id: 9
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(9, 'Soulful Seren', 290, 9)
+
+1 row created.
+
+SQL> /
+Enter value for track_id: 10
+Enter value for track_name: Indie Anthem
+Enter value for duration: 250
+Enter value for album_id: 10
+old   1: INSERT INTO Track VALUES(&track_id, '&track_name', &duration, &album_id)
+new   1: INSERT INTO Track VALUES(10, 'Indie Anthem', 250, 10)
+
+1 row created.
+
+SQL> SELECT * FROM Track;
+
+  TRACK_ID TRACK_NAME        DURATION   ALBUM_ID                                
+---------- --------------- ---------- ----------                                
+         1 Sunset Shines          240          1                                
+         2 Highway Nowhere        210          2                                
+         3 Moonlight Rays         360          3                                
+         4 Rap God                300          4                                
+         5 Monday Travel          270          5                                
+         6 Smooth Jazz            320          6                                
+         7 Bhangarh Talks         280          7                                
+         8 Folklore               330          8                                
+         9 Soulful Seren          290          9                                
+        10 Indie Anthem           250         10                                
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

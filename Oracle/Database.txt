@@ -1,0 +1,72 @@
+SQL> CREATE TABLE "User" (
+  2      username VARCHAR(15) PRIMARY KEY,
+  3      first_name VARCHAR(10),
+  4      last_name VARCHAR(10),
+  5      email VARCHAR(30)
+  6  );
+
+Table created.
+
+SQL> CREATE TABLE Playlist (
+  2      playlist_id INT PRIMARY KEY,
+  3      playlist_name VARCHAR(15),
+  4      type VARCHAR(10),
+  5      creator_username VARCHAR(10),
+  6      FOREIGN KEY (creator_username) REFERENCES "User"(username)
+  7  );
+
+Table created.
+
+SQL> CREATE TABLE "Album" (
+  2      album_id INT PRIMARY KEY,
+  3      year INT,
+  4      title VARCHAR(15),
+  5      genre VARCHAR(10),
+  6      podcast_or_music VARCHAR(10)
+  7  );
+
+Table created.
+ 
+SQL> CREATE TABLE Track (
+  2      track_id INT PRIMARY KEY,
+  3      track_name VARCHAR(15),
+  4      duration INT,
+  5      album_id INT,
+  6      FOREIGN KEY (album_id) REFERENCES "Album"(album_id)
+  7  );
+
+Table created.
+
+SQL> CREATE TABLE "Artist" (
+  2      artist_id INT PRIMARY KEY,
+  3      country VARCHAR(10),
+  4      artist_name VARCHAR(15)
+  5  );
+
+Table created.
+
+SQL> CREATE TABLE "Releases" (
+  2      artist_id INT,
+  3      album_id INT,
+  4      FOREIGN KEY (artist_id) REFERENCES "Artist"(artist_id),
+  5      FOREIGN KEY (album_id) REFERENCES "Album"(album_id),
+  6      PRIMARY KEY (artist_id, album_id)
+  7  );
+
+Table created.
+
+SQL> CREATE TABLE "PlaylistTrack" (
+  2      playlist_id INT,
+  3      track_id INT,
+  4      FOREIGN KEY (playlist_id) REFERENCES Playlist(playlist_id),
+  5      FOREIGN KEY (track_id) REFERENCES Track(track_id),
+  6      PRIMARY KEY (playlist_id, track_id)
+  7  );
+
+Table created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

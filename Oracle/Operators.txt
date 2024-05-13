@@ -1,0 +1,126 @@
+SQL> SELECT AVG(duration) AS average_duration
+  2  FROM Track
+  3  WHERE ALBUM_ID = 1;
+
+AVERAGE_DURATION                                                                
+----------------                                                                
+             300                                                                
+
+SQL> SELECT SUM(duration) AS total_duration
+  2  FROM Track
+  3  WHERE TRACK_ID IN (SELECT TRACK_ID FROM "PlaylistTrack" WHERE PLAYLIST_ID = 103);
+
+TOTAL_DURATION                                                                  
+--------------                                                                  
+           600                                                                  
+
+SQL> SELECT ALBUM_ID, COUNT(*) AS track_count
+  2  FROM Track
+  3  GROUP BY ALBUM_ID;
+
+  ALBUM_ID TRACK_COUNT                                                          
+---------- -----------                                                          
+         1           1                                                          
+         2           1                                                          
+         3           1                                                          
+         4           1                                                          
+         5           1                                                          
+         6           1                                                          
+         7           1                                                          
+         8           1                                                          
+         9           1                                                          
+        10           1                                                          
+
+10 rows selected.
+
+SQL> SELECT *
+  2  FROM "Album"
+  3  WHERE YEAR > 2000;
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR                     
+---------- ---------- --------------- ---------- ----------                     
+         1       2020 Summer Vibes    Rock       Music                          
+         2       2019 Greatest Hits   Rock       Music                          
+         3       2021 Piano Beats     Classical  Music                          
+         4       2018 Hip Hop Jazz    Hip Hop    Music                          
+         5       2023 Motivation      Talks      Podcast                        
+         6       2022 Jazz Nights     Jazz       Music                          
+         7       2022 Paranormal      Talks      Podcast                        
+         8       2016 Electronic Dope Electronic Music                          
+         9       2015 R&B Soul        R&B        Music                          
+        10       2024 Indie Vibes     Indie      Music                          
+
+10 rows selected.
+
+SQL> SELECT *
+  2  FROM "Album"
+  3  WHERE YEAR > 2020;
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR                     
+---------- ---------- --------------- ---------- ----------                     
+         3       2021 Piano Beats     Classical  Music                          
+         5       2023 Motivation      Talks      Podcast                        
+         6       2022 Jazz Nights     Jazz       Music                          
+         7       2022 Paranormal      Talks      Podcast                        
+        10       2024 Indie Vibes     Indie      Music                          
+
+SQL> SELECT *
+  2  FROM Track
+  3  WHERE DURATION BETWEEN 180 AND 240;
+
+  TRACK_ID TRACK_NAME        DURATION   ALBUM_ID                                
+---------- --------------- ---------- ----------                                
+         2 Highway Nowhere        210          2                                
+
+SQL> SELECT *
+  2  FROM Playlist
+  3  WHERE PLAYLIST_NAME LIKE 'Party%';
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US                               
+----------- --------------- ---------- ----------                               
+        103 Party Jams      Party      kshitij4                                 
+
+SQL> SELECT *
+  2  FROM Playlist
+  3  WHERE CREATOR_USERNAME = 'kshitij4' AND TYPE = 'Party';
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US                               
+----------- --------------- ---------- ----------                               
+        103 Party Jams      Party      kshitij4                                 
+
+SQL> SELECT *
+  2  FROM Track
+  3  WHERE ALBUM_ID IS NULL;
+
+no rows selected 
+
+SQL> SELECT *
+  2  FROM Playlist
+  3  WHERE PLAYLIST_ID NOT IN (SELECT PLAYLIST_ID FROM "PlaylistTrack");
+
+no rows selected
+
+SQL> 
+SQL> SELECT *
+  2  FROM "Album"
+  3  WHERE YEAR != 2020;
+
+  ALBUM_ID       YEAR TITLE           GENRE      PODCAST_OR                     
+---------- ---------- --------------- ---------- ----------                     
+         2       2019 Greatest Hits   Rock       Music                          
+         3       2021 Piano Beats     Classical  Music                          
+         4       2018 Hip Hop Jazz    Hip Hop    Music                          
+         5       2023 Motivation      Talks      Podcast                        
+         6       2022 Jazz Nights     Jazz       Music                          
+         7       2022 Paranormal      Talks      Podcast                        
+         8       2016 Electronic Dope Electronic Music                          
+         9       2015 R&B Soul        R&B        Music                          
+        10       2024 Indie Vibes     Indie      Music                          
+
+9 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

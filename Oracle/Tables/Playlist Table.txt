@@ -1,0 +1,122 @@
+SQL> INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username');
+Enter value for playlist_id: 101
+Enter value for playlist_name: Chill Mix
+Enter value for type: Party
+Enter value for creator_username: ansab10
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(101, 'Chill Mix', 'Party', 'ansab10')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 102
+Enter value for playlist_name: Workout Beats
+Enter value for type: Gym
+Enter value for creator_username: harshit30
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(102, 'Workout Beats', 'Gym', 'harshit30')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 103
+Enter value for playlist_name: Party Jams
+Enter value for type: Party
+Enter value for creator_username: kshitij4
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(103, 'Party Jams', 'Party', 'kshitij4')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 104
+Enter value for playlist_name: Study Session
+Enter value for type: Study
+Enter value for creator_username: ansh6
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(104, 'Study Session', 'Study', 'ansh6')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 105
+Enter value for playlist_name: Road Trip
+Enter value for type: Personal
+Enter value for creator_username: safal12
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(105, 'Road Trip', 'Personal', 'safal12')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 106
+Enter value for playlist_name: Throwback Hits
+Enter value for type: Personal
+Enter value for creator_username: ishaan15
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(106, 'Throwback Hits', 'Personal', 'ishaan15')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 107
+Enter value for playlist_name: Relaxing Piano
+Enter value for type: Relax
+Enter value for creator_username: aryan23
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(107, 'Relaxing Piano', 'Relax', 'aryan23')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 108
+Enter value for playlist_name: Country Vibes
+Enter value for type: Personal
+Enter value for creator_username: ekansh7
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(108, 'Country Vibes', 'Personal', 'ekansh7')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 109
+Enter value for playlist_name: Rock Anthems
+Enter value for type: Party
+Enter value for creator_username: keshav13
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(109, 'Rock Anthems', 'Party', 'keshav13')
+
+1 row created.
+
+SQL> /
+Enter value for playlist_id: 110
+Enter value for playlist_name: Pop Sensations
+Enter value for type: Party
+Enter value for creator_username: gitansh14
+old   1: INSERT INTO Playlist VALUES(&playlist_id, '&playlist_name', '&type', '&creator_username')
+new   1: INSERT INTO Playlist VALUES(110, 'Pop Sensations', 'Party', 'gitansh14')
+
+1 row created.
+
+SQL> SELECT * FROM Playlist;
+
+PLAYLIST_ID PLAYLIST_NAME   TYPE       CREATOR_US                               
+----------- --------------- ---------- ----------                               
+        101 Chill Mix       Party      ansab10                                  
+        102 Workout Beats   Gym        harshit30                                
+        103 Party Jams      Party      kshitij4                                 
+        104 Study Session   Study      ansh6                                    
+        105 Road Trip       Personal   safal12                                  
+        106 Throwback Hits  Personal   ishaan15                                 
+        107 Relaxing Piano  Relax      aryan23                                  
+        108 Country Vibes   Personal   ekansh7                                  
+        109 Rock Anthems    Party      keshav13                                 
+        110 Pop Sensations  Party      gitansh14                                
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

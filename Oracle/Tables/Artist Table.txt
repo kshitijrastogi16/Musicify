@@ -1,0 +1,112 @@
+SQL> INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name');
+Enter value for artist_id: 1
+Enter value for country: USA
+Enter value for artist_name: Alicia Keys
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(1, 'USA', 'Alicia Keys')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 2
+Enter value for country: UK
+Enter value for artist_name: Coldplay
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(2, 'UK', 'Coldplay')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 3
+Enter value for country: Germany
+Enter value for artist_name: Tangerine Dream
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(3, 'Germany', 'Tangerine Dream')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 4
+Enter value for country: Canada
+Enter value for artist_name: Drake
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(4, 'Canada', 'Drake')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 5
+Enter value for country: Australia
+Enter value for artist_name: Keith Urban
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(5, 'Australia', 'Keith Urban')
+
+1 row created.
+ 
+SQL> /
+Enter value for artist_id: 6
+Enter value for country: Brazil
+Enter value for artist_name: Antonio Carlos
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(6, 'Brazil', 'Antonio Carlos')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 7
+Enter value for country: Sweden
+Enter value for artist_name: Avicii
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(7, 'Sweden', 'Avicii')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 8
+Enter value for country: Ireland
+Enter value for artist_name: Hozier
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(8, 'Ireland', 'Hozier')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 9
+Enter value for country: France
+Enter value for artist_name: Stromae
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(9, 'France', 'Stromae')
+
+1 row created.
+
+SQL> /
+Enter value for artist_id: 10
+Enter value for country: India
+Enter value for artist_name: KK Singh
+old   1: INSERT INTO "Artist" VALUES(&artist_id, '&country', '&artist_name')
+new   1: INSERT INTO "Artist" VALUES(10, 'India', 'KK Singh')
+
+1 row created.
+
+SQL> SELECT * FROM "Artist";
+
+ ARTIST_ID COUNTRY    ARTIST_NAME                                               
+---------- ---------- ---------------                                           
+         1 USA        Alicia Keys                                               
+         2 UK         Coldplay                                                  
+         3 Germany    Tangerine Dream                                           
+         4 Canada     Drake                                                     
+         5 Australia  Keith Urban                                               
+         6 Brazil     Antonio Carlos                                            
+         7 Sweden     Avicii                                                    
+         8 Ireland    Hozier                                                    
+         9 France     Stromae                                                   
+        10 India      KK Singh                                                  
+
+10 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

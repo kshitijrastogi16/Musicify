@@ -1,0 +1,117 @@
+SQL> SELECT COUNT(*) AS user_count FROM "User";
+
+USER_COUNT                                                                      
+----------                                                                      
+        10                                                                      
+
+SQL> SELECT MAX(DURATION) AS max_duration FROM Track;
+
+MAX_DURATION                                                                    
+------------                                                                    
+         360                                                                    
+
+SQL> SELECT pt.PLAYLIST_ID, COUNT(pt.TRACK_ID) AS track_count
+  2  FROM "PlaylistTrack" pt
+  3  GROUP BY pt.PLAYLIST_ID;
+
+PLAYLIST_ID TRACK_COUNT                                                         
+----------- -----------                                                         
+        101           2                                                         
+        102           2                                                         
+        103           2                                                         
+        104           2                                                         
+        105           2                                                         
+        106           2                                                         
+        107           2                                                         
+        108           2                                                         
+        109           2                                                         
+        110           2                                                         
+
+10 rows selected.
+
+SQL> SELECT MIN(YEAR) AS earliest_release_year FROM "Album";
+
+EARLIEST_RELEASE_YEAR                                                           
+---------------------                                                           
+                 2015                                                           
+
+SQL> SELECT p.CREATOR_USERNAME, COUNT(p.PLAYLIST_ID) AS playlist_count
+  2  FROM Playlist p
+  3  GROUP BY p.CREATOR_USERNAME;
+
+CREATOR_US PLAYLIST_COUNT                                                       
+---------- --------------                                                       
+ansab10                 1                                                       
+harshit30               1                                                       
+kshitij4                1                                                       
+ansh6                   1                                                       
+safal12                 1                                                       
+ishaan15                1                                                       
+aryan23                 1                                                       
+ekansh7                 1                                                       
+keshav13                1                                                       
+gitansh14               1                                                       
+
+10 rows selected.
+
+SQL> SELECT a.TITLE, MAX(t.DURATION) AS max_duration
+  2  FROM "Album" a
+  3  JOIN Track t ON a.ALBUM_ID = t.ALBUM_ID
+  4  GROUP BY a.TITLE;
+
+TITLE           MAX_DURATION                                                    
+--------------- ------------                                                    
+Summer Vibes             300                                                    
+Greatest Hits            210                                                    
+Piano Beats              360                                                    
+Hip Hop Jazz             300                                                    
+Motivation               270                                                    
+Jazz Nights              320                                                    
+Paranormal               280                                                    
+Electronic Dope          330                                                    
+R&B Soul                 290                                                    
+Indie Vibes              250                                                    
+
+10 rows selected.
+
+SQL> SELECT r.ARTIST_ID, COUNT(r.ALBUM_ID) AS release_count
+  2  FROM "Releases" r
+  3  GROUP BY r.ARTIST_ID;
+
+ ARTIST_ID RELEASE_COUNT                                                        
+---------- -------------                                                        
+         1             1                                                        
+         2             1                                                        
+         3             1                                                        
+         4             1                                                        
+         5             1                                                        
+         6             1                                                        
+         7             1                                                        
+         8             1                                                        
+         9             1                                                        
+        10             1                                                        
+
+10 rows selected.
+
+SQL> SELECT GENRE, MIN(YEAR) AS min_release_year, MAX(YEAR) AS max_release_year
+  2  FROM "Album"
+  3  GROUP BY GENRE;
+
+GENRE      MIN_RELEASE_YEAR MAX_RELEASE_YEAR                                    
+---------- ---------------- ----------------                                    
+Rock                   2019             2020                                    
+Classical              2021             2021                                    
+Hip Hop                2018             2018                                    
+Talks                  2022             2023                                    
+Jazz                   2022             2022                                    
+Electronic             2016             2016                                    
+R&B                    2015             2015                                    
+Indie                  2024             2024                                    
+
+8 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off
